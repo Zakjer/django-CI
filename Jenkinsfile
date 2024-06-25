@@ -4,6 +4,9 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
+                script {
+                    sh 'which git'
+                }
                 git branch: 'main', url: 'https://github.com/Zakjer/django-CI.git'
             } 
         }
